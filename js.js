@@ -19,8 +19,11 @@ document.getElementById('submit-btn').addEventListener('click', function(e) {
         document.getElementById('lastName-error').classList.remove('hidden');
         isValid = false;
     }
-
-    if (!email ) {
+    function validerEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+    if (!email ||validerEmail(email) ) {
         document.getElementById('email-error').classList.remove('hidden');
         isValid = false;
     }
@@ -40,5 +43,30 @@ document.getElementById('submit-btn').addEventListener('click', function(e) {
         isValid = false;
     }
     
+    document.getElementById('firstName').addEventListener('input', function () {
+        document.getElementById("firstName-error").classList.add('hidden');
+    });
+    
+    document.getElementById('lastName').addEventListener('input', function () {
+        document.getElementById('lastName-error').classList.add('hidden');
+    });
+    
+    document.getElementById('email').addEventListener('input', function () {
+        document.getElementById('email-error').classList.add('hidden');
+    });
+    
+    document.querySelectorAll('input[name="query-type"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            document.getElementById('queryType-error').classList.add('hidden');
+        });
+    });
+    
+    document.getElementById('message').addEventListener('input', function () {
+        document.getElementById('message-error').classList.add('hidden');
+    });
+    
+    document.getElementById('consent').addEventListener('change', function () {
+        document.getElementById('consent-error').classList.add('hidden');
+    });
+    
 });
-
