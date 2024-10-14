@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-100 flex items-center justify-center h-screen ">
+<div class="bg-white p-8 rounded-lg shadow-md w-[35rem]">
+  <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+  <form id="my-form">
+      <div class=" flex md:flex-row  flex-wrap sm:flex-col gap-4 mb-4">
+          <div>
+              <label class="block text-sm font-thin mb-1" for="first-name">First Name <span class="text-green-600">*</span></label>
+              <input type="text" id="first-name" class="w-full border p-2 rounded " placeholder="First Name">
+              <p class="text-red-500 text-xs mt-1 hidden" id="firstName-error">This field is required</p>
+          </div>
+          <div>
+              <label class="block text-sm font-thin mb-1" for="last-name">Last Name <span class="text-green-600">*</span></label>
+              <input type="text" id="last-name" class="w-full border p-2 rounded" placeholder="Last Name">
+              <p class="text-red-500 text-xs mt-1 hidden" id="lastName-error">This field is required</p>
+          </div>
+      </div>
+      <div class="mb-4">
+          <label class="block text-sm font-thin mb-1" for="email">Email Address <span class="text-green-600">*</span></label>
+          <input type="email" id="email" class="w-full border p-2 rounded" placeholder="email@example.com">
+          <p class="text-red-500 text-xs mt-1 hidden" id="email-error">Please enter a valid email address</p>
+      </div>
+      <div class="mb-4">
+          <label class="block text-sm font-thin mb-1">Query Type <span class="text-green-600">*</span></label>
+          <div class="flex space-x-4">
+              <label class="flex items-center">
+                  <input type="radio" name="query-type" value="General Enquiry" class="form-radio text-green-600">
+                  <span class="ml-2 font-medium">General Enquiry</span>
+              </label>
+              <label class="flex items-center">
+                  <input type="radio" name="query-type" value="Support Request" class="form-radio text-green-600">
+                  <span class="ml-2 font-medium">Support Request</span>
+              </label>
+          </div>
+          <p class="text-red-500 text-xs mt-1 hidden" id="queryType-error">Please select a query type</p>
+      </div>
+      <div class="mb-4">
+          <label class="block text-sm font-thin mb-1" for="message">Message <span class="text-green-600">*</span></label>
+          <textarea id="message" class="w-full border p-2 rounded" rows="4" placeholder="Message"></textarea>
+          <p class="text-red-500 text-xs mt-1 hidden" id="message-error">This field is required</p>
+      </div>
+      <div class="mb-4">
+          <label class="flex items-center">
+              <input type="checkbox" id="consent" class="form-checkbox text-green-600">
+              <span class="ml-2">I consent to being contacted by the team <span class="text-red-500">*</span></span>
+          </label>
+          <p class="text-red-500 text-xs mt-1 hidden" id="consent-error">To submit this form, please consent to being contacted</p>
+      </div>
+      <div>
+          <button type="submit" class="w-full bg-green-600 text-white p-2 rounded" id="submit-btn">Submit</button>
+      </div>
+  </form>
+</div>
+  <script src="js.js"></script>
+</body>
+</html>
